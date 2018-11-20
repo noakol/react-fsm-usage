@@ -1,0 +1,122 @@
+body {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background-color: #307fe2;
+  bottom: 0;
+  margin: 0;
+  #root {
+    .login-container {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      align-items: center;
+      justify-content: center;
+      left: 50%;
+      right: 50%;
+      .login-wrapper {
+        margin-top: 60px;
+        background-color: #00004d;
+        font-family: 'Open Sans', sans-serif;
+        color: white;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 7px;
+        padding: 50px;
+        .title {
+          margin-bottom: 15px;
+          font-size: 20px;
+        }
+        .field {
+          display: flex;
+          flex-direction: column;
+          margin-top: 20px;
+          input {
+            outline: 0;
+            padding: 0 5px;
+            // margin-top: 25px;
+            border: 0px solid; 
+            border-radius: 5px;
+            height: 30px;
+            width: 270px;
+            box-sizing: border-box;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            margin-right: 7px;
+          }
+        }
+        button {
+          margin-top: 20px;
+          background-color: #307fe2;
+          border-radius: 5px;
+          border-radius: 5px;
+          border: 1px solid white;
+          height: 30px;
+          color:white;
+          cursor: pointer;
+        }
+      }
+      .ds-loader-wrapper {
+        height: 100%;
+        width: auto;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: rgba(255, 255, 255, 0.5);
+        z-index: 102;
+        .ds-loader-new {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          overflow: hidden;
+          font-size: 10px;
+          transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+          &:before, &:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% ,-50%);
+            animation: rounding-circels 1s linear infinite;
+            width: 6em;
+            height: 6em;
+            border-radius: 50%;
+            background: lightgray;
+          }
+        
+          &:after {
+            animation-delay: -0.5s;
+            background:rgb(7, 5, 105);;
+          }
+        
+          & .ds-loader-new {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes rounding-circels {
+  0%, 100% {
+    animation-timing-function: cubic-bezier(0.2, 0, 0.8, 1);
+  }
+  50% {
+    animation-timing-function: cubic-bezier(0, 0.2, 1, 0.8);
+  }
+  0% {
+    transform: rotate(0deg) translate(0, -20px) scale(0);
+  }
+  50% {
+    transform: rotate(180deg) translate(0, -20px) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) translate(0, -20px) scale(0);
+  }
+}
